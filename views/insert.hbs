@@ -5,16 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Product</title>
+    <style>
+        body{
+            background-image: url(https://thepopinsider.com/wp-content/uploads/2020/05/AToyStoreNearYou_Logo_NacelleCompany-scaled.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
+    <center>
+        <font color="red">
     <form action="/doInsert" method="post">
-        Name <input type="text" name="txtName" >
+        Name <input type="text" name="txtName"  >
         <br>
         Price <input type="text" name="txtPrice">
+        <br>
+        Information <input type="text" name="txtInformation">
         <br>
         Url Image: <input type="text" name="imgURL"/>
         <br>
         <input type="submit" value="Insert">
     </form>
+    </font>
+    <a href="/">Go Home</a>
+    </center>
 </body>
 </html>

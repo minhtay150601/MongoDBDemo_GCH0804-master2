@@ -8,6 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>All products</title>
+    <style>
+        body{
+            background-image: url(https://greenpointtoys.com/wp-content/uploads/2021/02/products-02142w_540x-530x294.jpg);
+            background-size: cover;
+        background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
     <h2>{{username}}</h2>
@@ -21,6 +28,7 @@
                <th>Name</th>
                <th>Price</th>
                <th>Image</th>
+               <th>Information</th>
                <th>Edit</th>
                <th>Delete</th>
            </tr>
@@ -31,6 +39,7 @@
                 <td>{{name}}</td>
                 <td>{{price}}</td>
                 <td><img src="{{imgUrl}}" width="150px" height="100px"></td>
+                <td>{{Information}}</td>
                  <td><a href="/edit?id={{_id}}">Edit</a></td>
                 <td><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure')">Delete</a></td>
             </tr>

@@ -7,8 +7,16 @@
      <link rel="stylesheet" href="css/mystyle.css">
     <title>Index Page</title>
 </head>
+<style>
+    body{
+        background-image: url(https://st2.depositphotos.com/1074529/11114/v/950/depositphotos_111148378-stock-illustration-facade-of-toy-store-vector.jpg) ;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+</style>
 <body>
-    <img src="pics/bacHo.jpg" width="400px" height="300px"/>
+    <center>
     <h2 class="redText">Welcome {{loginName}}</h2>
     
     <form action="/login" method="post">
@@ -25,5 +33,6 @@
         <li><a href="/view">All products</a></li>
         <li><a href="/register">Register</a></li>
     </ul>
+    </center>
 </body>
 </html>
