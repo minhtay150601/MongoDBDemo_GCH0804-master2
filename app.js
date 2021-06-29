@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'))
 
-var dsNotToDelete = ['ao','quan','bep','my goi'];
+var dsNotToDelete = ['Baby Yoda plush'];
 
 const dbHandler = require('./databaseHandler')
 
@@ -86,8 +86,9 @@ app.get('/view',async (req,res)=>{
 app.post('/doInsert', async (req,res)=>{
     const nameInput = req.body.txtName;
     const priceInput = req.body.txtPrice;
+    const descriptionInput = req.body.txtDescription;
     const imgURLInput = req.body.imgURL;
-    const newProduct = {name:nameInput, price:priceInput,imgUrl:imgURLInput, size : {dai:20, rong:40}}
+    const newProduct = {name:nameInput, price:priceInput, description:descriptionInput, imgUrl:imgURLInput, size : {dai:20, rong:40}}
     await dbHandler.insertOneIntoCollection(newProduct,"SanPham");
     res.render('index')
 })

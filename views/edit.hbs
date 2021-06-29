@@ -5,14 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
+    <style>
+        body{
+            background-image: url(https://www.totallicensing.com/wp-content/uploads/2021/02/toys-spending-pandemic-Mattel.jpg);
+            background-size: cover;
+        background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
+    <center>
     <form action="/update" method="post">
         <input type="hidden" name="id" value="{{product._id}}">
         Name <input type="text" name="txtName" value="{{product.name}}">
         <br/>
         Price : <input type="text" name="txtPrice" value="{{product.price}}">
+        <br>
+        Description : <input type="text" name="txtDescription" value="{{product.description}}">
         <input type="submit" value="Update">
     </form>
+    <a href="/view">Cancel</a>
+    </center>
 </body>
 </html>
