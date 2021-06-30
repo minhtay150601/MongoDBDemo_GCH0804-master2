@@ -33,4 +33,5 @@ async function checkUser(nameIn,passwordIn){
 
 }
 
-module.exports = {searchSanPham,insertOneIntoCollection,checkUser}
+
+module.exports = {searchSanPham,insertOneIntoCollection,checkUser }

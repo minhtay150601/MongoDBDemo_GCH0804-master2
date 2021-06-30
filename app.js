@@ -36,7 +36,7 @@ app.post('/search', async (req,res)=>{
 app.post('/update',async (req,res)=>{
     const id = req.body.id;
     const nameInput = req.body.txtName;
-    const priceInput = req.body.txtPrice;
+    var priceInput = req.body.txtPrice;
     const newValues ={$set : {name: nameInput,price:priceInput}};
     const ObjectID = require('mongodb').ObjectID;
     const condition = {"_id" : ObjectID(id)};
@@ -85,12 +85,16 @@ app.get('/view',async (req,res)=>{
 
 app.post('/doInsert', async (req,res)=>{
     const nameInput = req.body.txtName;
-    const priceInput = req.body.txtPrice;
+    var priceInput = req.body.txtPrice ;
     const descriptionInput = req.body.txtDescription;
     const imgURLInput = req.body.imgURL;
     const newProduct = {name:nameInput, price:priceInput, description:descriptionInput, imgUrl:imgURLInput, size : {dai:20, rong:40}}
+    if(priceInput < 5){
+        res.render('insert',{priceError:'Price invalid'})
+     } else{
     await dbHandler.insertOneIntoCollection(newProduct,"SanPham");
     res.render('index')
+    }
 })
 app.get('/register',(req,res)=>{
     res.render('register')
